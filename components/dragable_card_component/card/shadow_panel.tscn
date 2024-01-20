@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://kvt4c6h81b5i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmorg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_size = 10
+shadow_offset = Vector2(10, 10)
+
+[node name="ShadowPanel" type="Panel"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mmorg")

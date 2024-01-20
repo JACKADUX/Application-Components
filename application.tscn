@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca5wm0y5hhe1a"]
+
+[ext_resource type="PackedScene" uid="uid://6u8h5mdrptp2" path="res://components/dragable_card_component/dragable_card_component.tscn" id="1_5tplo"]
+[ext_resource type="Script" path="res://application.gd" id="1_ajgv6"]
+
+[node name="Application" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ajgv6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.501961, 0.556863, 0.607843, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DragableCardComponent" parent="MarginContainer" instance=ExtResource("1_5tplo")]
+layout_mode = 2

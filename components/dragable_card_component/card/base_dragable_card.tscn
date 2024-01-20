@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://1kesytt30cu1"]
+
+[ext_resource type="Script" path="res://components/dragable_card_component/card/base_dragable_card.gd" id="1_318uh"]
+[ext_resource type="Texture2D" uid="uid://cv3lk1pbm7kla" path="res://resource/icons/Boghma.png" id="2_vj0rb"]
+[ext_resource type="Texture2D" uid="uid://p00vrh0ps58s" path="res://resource/icons/drag.png" id="3_dueco"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0w3p"]
+bg_color = Color(0.282353, 0.329412, 0.376471, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_6stoq"]
+font_color = Color(0.823529, 0.854902, 0.886275, 1)
+
+[node name="BaseDragableCard" type="PanelContainer"]
+offset_right = 570.0
+offset_bottom = 84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w0w3p")
+script = ExtResource("1_318uh")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_vj0rb")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Boghma"
+label_settings = SubResource("LabelSettings_6stoq")
+
+[node name="TextureRect2" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+self_modulate = Color(0.117647, 0.152941, 0.180392, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_dueco")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="button_down" from="MarginContainer/HBoxContainer/TextureRect2" to="." method="_on_texture_rect_2_button_down"]

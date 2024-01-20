@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg8fp2m6l85w0"]
+
+[ext_resource type="Script" path="res://components/dragable_card_component/card/place_holder_panel.gd" id="1_6o7yy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpipx"]
+bg_color = Color(0.6, 0.6, 0.6, 0.490196)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.839216, 0.694118, 0.415686, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(1, 0.972549, 0.929412, 1)
+
+[node name="PlaceHolderPanel" type="Panel"]
+custom_minimum_size = Vector2(200, 4)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -283.0
+offset_bottom = -1163.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_mpipx")
+script = ExtResource("1_6o7yy")
