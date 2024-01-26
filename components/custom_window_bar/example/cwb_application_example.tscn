@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=3 uid="uid://dcae4kyb4oltp"]
+
+[ext_resource type="Texture2D" uid="uid://baguolgtgf26d" path="res://resource/icons/godot.png" id="2_1s4ce"]
+[ext_resource type="Shader" uid="uid://corhjembtpeld" path="res://resource/shader/ms_fill.tres" id="2_lh0wa"]
+[ext_resource type="PackedScene" uid="uid://b3kobiipq2jbo" path="res://components/custom_window_bar/custom_window_bar.tscn" id="2_ujjva"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s61cp"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvb81"]
+shader = ExtResource("2_lh0wa")
+shader_parameter/Fill = Color(0.301961, 0.552941, 0.792157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qlcl"]
+content_margin_left = 32.0
+content_margin_right = 32.0
+bg_color = Color(0.113725, 0.113725, 0.113725, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e47jf"]
+content_margin_left = 32.0
+content_margin_right = 32.0
+bg_color = Color(0.113725, 0.113725, 0.113725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0.27451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gso66"]
+content_margin_left = 32.0
+content_margin_right = 32.0
+bg_color = Color(0.301961, 0.552941, 0.792157, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbyei"]
+
+[node name="Application" type="PanelContainer"]
+clip_children = 2
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s61cp")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+layout_mode = 2
+split_offset = -160
+collapsed = true
+dragger_visibility = 2
+
+[node name="CustomWindowBar" parent="VSplitContainer" instance=ExtResource("2_ujjva")]
+layout_mode = 2
+window_min_size = Vector2i(500, 500)
+
+[node name="Main" type="Control" parent="VSplitContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer/Main/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="VSplitContainer/Main/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="VSplitContainer/Main/MarginContainer/VBoxContainer/CenterContainer"]
+material = SubResource("ShaderMaterial_yvb81")
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_1s4ce")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="VSplitContainer/Main/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_5qlcl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e47jf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gso66")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kbyei")
+text = "CLICK ME!"

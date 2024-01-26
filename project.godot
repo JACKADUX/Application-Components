@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Application Components"
-run/main_scene="res://application.tscn"
+run/main_scene="res://components/custom_window_bar/example/cwb_application_example.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,3 +20,8 @@ config/icon="res://icon.svg"
 window/size/viewport_width=720
 window/size/viewport_height=1280
 window/size/borderless=true
+window/size/transparent=true
+
+[rendering]
+
+viewport/transparent_background=true

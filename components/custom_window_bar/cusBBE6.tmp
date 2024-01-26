@@ -1,18 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3kobiipq2jbo"]
+[gd_scene load_steps=6 format=3 uid="uid://b3kobiipq2jbo"]
 
-[ext_resource type="Script" path="res://components/borderless_titlebar/title_bar.gd" id="1_75sb0"]
-[ext_resource type="Texture2D" uid="uid://wlhcbu7iodu2" path="res://icon.svg" id="2_mlfh2"]
-[ext_resource type="Script" path="res://components/borderless_titlebar/window_scaler.gd" id="3_xowj6"]
+[ext_resource type="Script" path="res://components/custom_window_bar/custom_window_bar.gd" id="1_5unlh"]
+[ext_resource type="Script" path="res://components/custom_window_bar/window_scaler_component.gd" id="2_4gkye"]
+[ext_resource type="Script" path="res://components/custom_window_bar/window_state_component.gd" id="2_hnrtg"]
+[ext_resource type="Script" path="res://components/custom_window_bar/window_drag_component.gd" id="2_lons0"]
+[ext_resource type="Texture2D" uid="uid://cv3lk1pbm7kla" path="res://resource/icons/Boghma.png" id="3_eh4sk"]
 
-[node name="TitleBar" type="PanelContainer"]
+[node name="CustomWindowBar" type="PanelContainer"]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 64.0
 grow_horizontal = 2
-script = ExtResource("1_75sb0")
+script = ExtResource("1_5unlh")
 
-[node name="WindowScaler" type="Node" parent="."]
-script = ExtResource("3_xowj6")
+[node name="WindowStateComponent" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_hnrtg")
+
+[node name="WindowDragComponent" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_lons0")
+
+[node name="WindowScalerComponent" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_4gkye")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -28,14 +39,14 @@ theme_override_constants/margin_bottom = 16
 unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture = ExtResource("2_mlfh2")
+texture = ExtResource("3_eh4sk")
 expand_mode = 1
 
 [node name="LabelWindowTitle" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Window Title"
+text = "Boghma"
 clip_text = true
 
 [node name="BtnMinimizeWindow" type="Button" parent="HBoxContainer"]
