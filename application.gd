@@ -1,6 +1,7 @@
 extends Control
 
-@onready var dragable_card_component = $MarginContainer/DragableCardComponent
+@onready var dragable_card_component = $VBoxContainer/MarginContainer/DragableCardComponent
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

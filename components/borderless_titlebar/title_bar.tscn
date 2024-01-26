@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3kobiipq2jbo"]
+
+[ext_resource type="Script" path="res://components/borderless_titlebar/title_bar.gd" id="1_75sb0"]
+[ext_resource type="Texture2D" uid="uid://wlhcbu7iodu2" path="res://icon.svg" id="2_mlfh2"]
+[ext_resource type="Script" path="res://components/borderless_titlebar/window_scaler.gd" id="3_xowj6"]
+
+[node name="TitleBar" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+script = ExtResource("1_75sb0")
+
+[node name="WindowScaler" type="Node" parent="."]
+script = ExtResource("3_xowj6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureRectWindowIcon" type="TextureRect" parent="HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_mlfh2")
+expand_mode = 1
+
+[node name="LabelWindowTitle" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Window Title"
+clip_text = true
+
+[node name="BtnMinimizeWindow" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 48)
+layout_mode = 2
+text = "---"
+
+[node name="BtnMaxsimizeWindow" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 48)
+layout_mode = 2
+text = "O"
+
+[node name="BtnCloseWindow" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 48)
+layout_mode = 2
+text = "X"
