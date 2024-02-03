@@ -1,29 +1,29 @@
-class_name MographBaseEffector extends Node2D
+class_name MographBaseEffector extends Control
 
 @export var strength :float = 1
-@export var enable_position:= false
-@export var effect_position:=Vector2.ZERO
-@export var enable_rotation:= false
-@export var effect_rotation:float = 0
-@export var enable_scale:= false
-@export var effect_scale:=Vector2.ZERO
 @export var fields :Array[MographBaseField] = []
 
-func get_effect_position():
-	return effect_position*strength
+func get_node_real_global_transform(node:Control) -> Transform2D:
+	var trans = node.get_global_transform()
+	var pos = trans*node.pivot_offset
+	trans.origin = pos
+	return trans
 
-func get_effect_rotation():
-	return effect_rotation*strength
 
-func get_effect_scale():
-	return effect_scale*strength
-	
+func apply_effect(node:Control):
+	pass
+
 
 func get_field_result(node:Control):
 	var field_result = 1
 	for field:MographBaseField in fields:
 		if not field or not field.visible:
 			continue 
+		## FIXME: 多个域叠加
 		field_result = field.get_field_result(node)
 	return field_result
+	
+
+
+
 	

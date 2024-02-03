@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://5jcxyqlhawia"]
+
+[ext_resource type="Script" path="res://components/mograph_component/mograph_container/mograph_radial_container.gd" id="1_k26rj"]
+[ext_resource type="Script" path="res://components/mograph_component/effector/mograph_plain_effector.gd" id="1_mlyrk"]
+[ext_resource type="Script" path="res://components/mograph_component/field/mograph_circle_field.gd" id="2_avdp3"]
+[ext_resource type="Script" path="res://components/mograph_component/tool/container_transform_viewer.gd" id="4_b727l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgedt"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.152941, 0.152941, 0.152941, 1)
+corner_detail = 20
+
+[sub_resource type="Theme" id="Theme_e5qtn"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_qgedt")
+
+[node name="MographRadialExample" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlainEffector" type="Control" parent="." node_paths=PackedStringArray("fields")]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 812.0
+offset_top = 4.00001
+offset_right = 812.0
+offset_bottom = 4.00001
+rotation = 5.38559
+script = ExtResource("1_mlyrk")
+enable_position = true
+effect_position = Vector2(100, 0)
+fields = [NodePath("CircleField")]
+
+[node name="CircleField" type="Control" parent="PlainEffector"]
+anchors_preset = 0
+offset_left = -414.184
+offset_top = -195.388
+offset_right = -374.184
+offset_bottom = -155.388
+script = ExtResource("2_avdp3")
+
+[node name="MographRadialContainer" type="Container" parent="." node_paths=PackedStringArray("effectors")]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 197.0
+offset_right = 233.0
+offset_bottom = 237.0
+theme = SubResource("Theme_e5qtn")
+script = ExtResource("1_k26rj")
+amount = 1.7
+align = true
+effectors = [NodePath("../PlainEffector")]
+
+[node name="PanelContainer2" type="PanelContainer" parent="MographRadialContainer"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PanelContainer3" type="PanelContainer" parent="MographRadialContainer"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="PanelContainer4" type="PanelContainer" parent="MographRadialContainer"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
+
+[node name="PanelContainer5" type="PanelContainer" parent="MographRadialContainer"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="PanelContainer6" type="PanelContainer" parent="MographRadialContainer"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="PanelContainer7" type="PanelContainer" parent="MographRadialContainer"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="DebugViewer" type="Control" parent="." node_paths=PackedStringArray("mograph_container")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("4_b727l")
+mograph_container = NodePath("../MographRadialContainer")

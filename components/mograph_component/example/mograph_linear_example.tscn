@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://dys63uiy6v2rw"]
+
+[ext_resource type="Script" path="res://components/mograph_component/tool/container_transform_viewer.gd" id="1_3ae4b"]
+[ext_resource type="Script" path="res://components/mograph_component/effector/mograph_plain_effector.gd" id="1_2252f"]
+[ext_resource type="Script" path="res://components/mograph_component/field/mograph_circle_field.gd" id="2_214is"]
+[ext_resource type="Script" path="res://components/mograph_component/mograph_container/mograph_linear_container.gd" id="3_d4gb0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgedt"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.152941, 0.152941, 0.152941, 1)
+corner_detail = 20
+
+[sub_resource type="Theme" id="Theme_bpmw8"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_qgedt")
+
+[node name="MographLinearExample" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 217.0
+offset_top = 242.0
+offset_right = -142.0
+offset_bottom = -271.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlainEffector2" type="Control" parent="." node_paths=PackedStringArray("fields")]
+anchors_preset = 0
+offset_left = 312.0
+offset_top = -367.0
+offset_right = 312.0
+offset_bottom = -367.0
+rotation = 1.3282
+script = ExtResource("1_2252f")
+enable_position = true
+effect_position = Vector2(0, 99.84)
+strength = -2.09
+fields = [NodePath("../CircleField")]
+
+[node name="CircleField" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 283.0
+offset_top = 81.0
+offset_right = 283.0
+offset_bottom = 81.0
+script = ExtResource("2_214is")
+radius = 200.0
+
+[node name="MographLinearContainer" type="Container" parent="." node_paths=PackedStringArray("effectors")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.5
+offset_top = -76.5
+offset_right = -212.5
+offset_bottom = -76.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.572468
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_bpmw8")
+script = ExtResource("3_d4gb0")
+linear_mode = 1
+amount = 1.1
+align_position = Vector2(100, 20)
+step_rotation = 15.51
+effectors = [NodePath("../PlainEffector2")]
+
+[node name="PanelContainer2" type="PanelContainer" parent="MographLinearContainer"]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PanelContainer3" type="PanelContainer" parent="MographLinearContainer"]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="PanelContainer4" type="PanelContainer" parent="MographLinearContainer"]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
+
+[node name="PanelContainer5" type="PanelContainer" parent="MographLinearContainer"]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="PanelContainer6" type="PanelContainer" parent="MographLinearContainer"]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="PanelContainer7" type="PanelContainer" parent="MographLinearContainer"]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="PanelContainer8" type="PanelContainer" parent="MographLinearContainer"]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="DebugViewer" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -216.0
+offset_top = -239.0
+offset_right = -176.0
+offset_bottom = -199.0
+script = ExtResource("1_3ae4b")

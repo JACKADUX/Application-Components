@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://4lfo5wnagh1c"]
+
+[node name="Control1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+
+[node name="Control2" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 191.0
+offset_top = 119.0
+offset_right = 231.0
+offset_bottom = 159.0
+rotation = 0.685914
+scale = Vector2(2, 2)
+pivot_offset = Vector2(50, 50)
+
+[node name="Control3" type="Control" parent="Control2"]
+anchors_preset = 0
+offset_left = 98.384
+offset_top = 67.688
+offset_right = 138.384
+offset_bottom = 107.688
+rotation = 0.785398
+pivot_offset = Vector2(50, 50)
+
+[node name="Control4" type="Control" parent="Control2/Control3"]
+anchors_preset = 0
+offset_left = 50.9579
+offset_top = -79.0198
+offset_right = 90.9579
+offset_bottom = -39.0198
+rotation = -0.314159
+pivot_offset = Vector2(54.29, 50)

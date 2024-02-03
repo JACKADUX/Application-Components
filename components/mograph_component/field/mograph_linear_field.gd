@@ -1,5 +1,5 @@
 @tool
-class_name LinearField extends MographBaseField
+class_name MographLinearField extends MographBaseField
 
 @export var length :float = 100:
 	set(value):

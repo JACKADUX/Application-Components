@@ -1,4 +1,4 @@
-class_name MographBaseField extends Node2D
+class_name MographBaseField extends Control
 
 
 func get_node_real_global_position(node:Control):

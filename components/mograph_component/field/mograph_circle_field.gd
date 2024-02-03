@@ -1,5 +1,5 @@
 @tool
-class_name CircleField extends MographBaseField
+class_name MographCircleField extends MographBaseField
 
 
 @export var radius :float = 100:
