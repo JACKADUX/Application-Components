@@ -48,8 +48,9 @@ func update(delta):
 		child.rotation_degrees = rotate_each*index + step_rotation*index
 		child.scale = scale_each.call(index)
 		
-	super(delta)	
+		apply_effector(child)
 
+		
 
 
 

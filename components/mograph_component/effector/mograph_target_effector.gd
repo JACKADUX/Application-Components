@@ -12,9 +12,9 @@ func apply_effect(node:Control):
 	var rot = parent_trans*node_trans.looking_at(trans.origin)
 	
 	if addition:
-		node.rotation += rot.get_rotation()*strength
+		node.rotation += rot.get_rotation()*strength*field_result
 	else:
-		node.rotation = rot.get_rotation()*strength
+		node.rotation = rot.get_rotation()*strength*field_result
 
 
 	
