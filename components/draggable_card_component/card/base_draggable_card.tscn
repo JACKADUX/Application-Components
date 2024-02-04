@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1kesytt30cu1"]
+
+[ext_resource type="Script" path="res://components/draggable_card_component/card/base_draggable_card.gd" id="1_wskag"]
+
+[node name="BaseDraggableCard" type="PanelContainer"]
+offset_right = 570.0
+offset_bottom = 84.0
+script = ExtResource("1_wskag")

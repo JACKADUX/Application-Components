@@ -30,23 +30,24 @@ grow_vertical = 2
 
 [node name="PlainEffector2" type="Control" parent="." node_paths=PackedStringArray("fields")]
 anchors_preset = 0
-offset_left = 312.0
-offset_top = -367.0
-offset_right = 312.0
-offset_bottom = -367.0
+offset_left = -38.0
+offset_top = -242.0
+offset_right = -38.0
+offset_bottom = -242.0
 rotation = 1.3282
 script = ExtResource("1_2252f")
-enable_position = true
-effect_position = Vector2(0, 99.84)
-strength = -2.09
-fields = [NodePath("../CircleField")]
+enable_scale = true
+effect_scale = Vector2(0.5, 0.5)
+enable_z_index = true
+effect_z_index = 3
+fields = [NodePath("../MographCircleField")]
 
-[node name="CircleField" type="Control" parent="."]
+[node name="MographCircleField" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 283.0
-offset_top = 81.0
-offset_right = 283.0
-offset_bottom = 81.0
+offset_left = 332.0
+offset_top = 27.0
+offset_right = 372.0
+offset_bottom = 67.0
 script = ExtResource("2_214is")
 radius = 200.0
 
@@ -63,15 +64,12 @@ offset_right = -212.5
 offset_bottom = -76.5
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.572468
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource("Theme_bpmw8")
 script = ExtResource("3_d4gb0")
 linear_mode = 1
-amount = 1.1
-align_position = Vector2(100, 20)
-step_rotation = 15.51
+align_position = Vector2(110, 0)
 effectors = [NodePath("../PlainEffector2")]
 
 [node name="PanelContainer2" type="PanelContainer" parent="MographLinearContainer"]
@@ -87,18 +85,21 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="PanelContainer4" type="PanelContainer" parent="MographLinearContainer"]
+z_index = 1
 custom_minimum_size = Vector2(200, 400)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 6
 
 [node name="PanelContainer5" type="PanelContainer" parent="MographLinearContainer"]
+z_index = 2
 custom_minimum_size = Vector2(200, 400)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="PanelContainer6" type="PanelContainer" parent="MographLinearContainer"]
+z_index = 1
 custom_minimum_size = Vector2(200, 400)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -116,10 +117,11 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="DebugViewer" type="Control" parent="."]
+[node name="DebugViewer" type="Control" parent="." node_paths=PackedStringArray("mograph_container")]
 anchors_preset = 0
 offset_left = -216.0
 offset_top = -239.0
 offset_right = -176.0
 offset_bottom = -199.0
 script = ExtResource("1_3ae4b")
+mograph_container = NodePath("../MographLinearContainer")

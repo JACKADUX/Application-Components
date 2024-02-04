@@ -4,11 +4,11 @@ extends VBoxContainer
 @export var PLACE_HOLDER_PACKED_SCENE:PackedScene
 @export var place_holder_min_size:=Vector2(200,4)
 @export var place_holder_duration :float = 0.2
+@export var _shadow_panel_packed_scene:PackedScene 
 
 var _draged_card:BaseDragableCard
 var _drag_offset := Vector2.ZERO
 var _previous_index :int
-var _shadow_panel_packed_scene = preload("res://components/dragable_card_component/card/shadow_panel.tscn")
 var _shadow_panel:Panel
 
 func _ready():

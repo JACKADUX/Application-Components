@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://pekautnq34hp"]
+
+[ext_resource type="Script" path="res://components/draggable_card_component/example/draggable_card_example.gd" id="1_yhrqp"]
+[ext_resource type="PackedScene" uid="uid://b5ovtxphyim6a" path="res://components/draggable_card_component/example/custom_card.tscn" id="2_ogqgv"]
+[ext_resource type="PackedScene" uid="uid://6u8h5mdrptp2" path="res://components/draggable_card_component/draggable_card_component.tscn" id="3_5i1bd"]
+[ext_resource type="Script" path="res://utils/free_parent_when_start.gd" id="4_dgb04"]
+
+[node name="draggable_card_example" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yhrqp")
+card_scene = ExtResource("2_ogqgv")
+
+[node name="DraggableCardComponent" parent="." instance=ExtResource("3_5i1bd")]
+layout_mode = 1
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_bottom = 84.0
+grow_vertical = 1
+
+[node name="CustomDraggableCard" parent="DraggableCardComponent" instance=ExtResource("2_ogqgv")]
+layout_mode = 2
+
+[node name="FPWS" type="Node" parent="DraggableCardComponent/CustomDraggableCard"]
+script = ExtResource("4_dgb04")

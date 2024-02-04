@@ -34,7 +34,10 @@ offset_bottom = 4.00001
 rotation = 5.38559
 script = ExtResource("1_mlyrk")
 enable_position = true
-effect_position = Vector2(100, 0)
+effect_position = Vector2(200, 0)
+enable_scale = true
+effect_scale = Vector2(0.5, 0.5)
+effect_z_index = 4
 fields = [NodePath("CircleField")]
 
 [node name="CircleField" type="Control" parent="PlainEffector"]
@@ -53,7 +56,7 @@ offset_right = 233.0
 offset_bottom = 237.0
 theme = SubResource("Theme_e5qtn")
 script = ExtResource("1_k26rj")
-amount = 1.7
+amount = 1.585
 align = true
 effectors = [NodePath("../PlainEffector")]
 

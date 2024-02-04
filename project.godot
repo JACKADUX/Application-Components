@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Application Components"
 config/tags=PackedStringArray("软件开发系列教程")
-run/main_scene="res://components/mograph_component/example/mograph_effector_example.tscn"
+run/main_scene="res://components/draggable_card_component/example/draggable_card_example.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

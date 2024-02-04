@@ -40,10 +40,10 @@ fields = [NodePath("CircleField")]
 [node name="CircleField" type="Control" parent="PlainEffector"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 234.0
-offset_top = -12.0
-offset_right = 234.0
-offset_bottom = -12.0
+offset_left = 32.0
+offset_top = 194.0
+offset_right = 32.0
+offset_bottom = 194.0
 script = ExtResource("2_f01mx")
 
 [node name="MographGridContainer" type="Container" parent="." node_paths=PackedStringArray("effectors")]
@@ -54,9 +54,8 @@ offset_right = 233.0
 offset_bottom = 237.0
 theme = SubResource("Theme_e5qtn")
 script = ExtResource("1_b1mc6")
-amount = 6.31
-grid_column = 4
-gird_size = Vector2(150, 200)
+grid_mode = 1
+gird_size = Vector2(110, 200)
 effectors = [NodePath("../PlainEffector")]
 
 [node name="PanelContainer2" type="PanelContainer" parent="MographGridContainer"]
@@ -72,7 +71,6 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="PanelContainer4" type="PanelContainer" parent="MographGridContainer"]
-z_index = 1
 custom_minimum_size = Vector2(100, 200)
 layout_mode = 2
 size_flags_horizontal = 2
@@ -85,6 +83,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="PanelContainer6" type="PanelContainer" parent="MographGridContainer"]
+z_index = 1
 custom_minimum_size = Vector2(100, 200)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -97,6 +96,18 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="PanelContainer8" type="PanelContainer" parent="MographGridContainer"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="PanelContainer9" type="PanelContainer" parent="MographGridContainer"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="PanelContainer10" type="PanelContainer" parent="MographGridContainer"]
 custom_minimum_size = Vector2(100, 200)
 layout_mode = 2
 size_flags_horizontal = 6

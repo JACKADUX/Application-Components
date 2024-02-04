@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5ovtxphyim6a"]
+
+[ext_resource type="PackedScene" uid="uid://1kesytt30cu1" path="res://components/draggable_card_component/card/base_draggable_card.tscn" id="1_grn1e"]
+[ext_resource type="Texture2D" uid="uid://cv3lk1pbm7kla" path="res://resource/icons/Boghma.png" id="2_daufi"]
+[ext_resource type="Script" path="res://components/draggable_card_component/example/custom_card.gd" id="2_qaqbv"]
+[ext_resource type="Texture2D" uid="uid://p00vrh0ps58s" path="res://resource/icons/drag.png" id="3_0mmr5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0w3p"]
+bg_color = Color(0.282353, 0.329412, 0.376471, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_rnjvn"]
+font_color = Color(0.823529, 0.854902, 0.886275, 1)
+
+[node name="CustomDraggableCard" instance=ExtResource("1_grn1e")]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 0.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_w0w3p")
+script = ExtResource("2_qaqbv")
+
+[node name="MarginContainer2" type="MarginContainer" parent="." index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2" index="0"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_daufi")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Boghma"
+label_settings = SubResource("LabelSettings_rnjvn")
+
+[node name="DragHandleTextureRect" type="TextureButton" parent="MarginContainer2/HBoxContainer" index="2"]
+self_modulate = Color(0.117647, 0.152941, 0.180392, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_0mmr5")
+ignore_texture_size = true
+stretch_mode = 5

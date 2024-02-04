@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bg8fp2m6l85w0"]
 
-[ext_resource type="Script" path="res://components/dragable_card_component/card/place_holder_panel.gd" id="1_6o7yy"]
+[ext_resource type="Script" path="res://components/draggable_card_component/card/place_holder_panel.gd" id="1_6o7yy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpipx"]
 bg_color = Color(0.6, 0.6, 0.6, 0.490196)
