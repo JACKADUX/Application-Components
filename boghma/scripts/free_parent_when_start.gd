@@ -1,9 +1,5 @@
 class_name FPWS extends Node
 
-"""
-helper node to Free Parent node When application/game Started
-"""
-
 @export var enable:= true
 
 func _ready() -> void:
