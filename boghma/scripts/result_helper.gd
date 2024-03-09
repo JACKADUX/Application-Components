@@ -5,6 +5,8 @@ signal successed
 signal failed
 signal error_occurred
 
+signal updated(data)
+
 var state := 0
 
 func _init():
@@ -35,3 +37,6 @@ func fail():
 func error():
 	state = 3
 	error_occurred.emit()
+
+func update(data):
+	updated.emit(data)
