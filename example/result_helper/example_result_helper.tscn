@@ -1,10 +1,23 @@
 [gd_scene load_steps=3 format=3 uid="uid://mx1ax6h6ny6c"]
 
 [ext_resource type="Script" path="res://example/result_helper/example_result_helper.gd" id="1_ipian"]
-[ext_resource type="Script" path="res://example/result_helper/test.gd" id="2_bj3w0"]
+
+[sub_resource type="GDScript" id="GDScript_egsax"]
+script/source = "extends Node
+
+
+func _ready():
+	var x = Object.new()
+	var f = func():
+		print(x)
+		print(is_instance_valid(x))
+		pass
+	x.free()
+	f.call()
+"
 
 [node name="ExampleResultHelper" type="Node"]
 script = ExtResource("1_ipian")
 
 [node name="Node" type="Node" parent="."]
-script = ExtResource("2_bj3w0")
+script = SubResource("GDScript_egsax")
