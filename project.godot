@@ -12,11 +12,15 @@ config_version=5
 
 config/name="Application Components"
 config/tags=PackedStringArray("软件开发系列教程")
-run/main_scene="res://example/custom_iterator/custom_iterator.tscn"
-config/features=PackedStringArray("4.2", "Forward Plus")
+run/main_scene="res://example/factory/example_factory.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=800
 window/size/viewport_height=800
+
+[dotnet]
+
+project/assembly_name="Application Components"

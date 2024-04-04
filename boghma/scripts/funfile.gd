@@ -23,6 +23,9 @@ static func unzip_file(source_file:String, target_path:String) -> bool:
 	for file in reader.get_files():
 		if file.get_extension():
 			var file_access = FileAccess.open(target_path.path_join(file),FileAccess.WRITE)
+			if not file_access:
+				push_error("unzip_file skip '%s'"%[file])
+				continue
 			file_access.store_buffer(reader.read_file(file))
 			file_access.close()
 	reader.close()

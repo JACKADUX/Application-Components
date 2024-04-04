@@ -1,0 +1,2 @@
+替换exe图标，通过magick生成ico
+magick convert "C:\Users\Administrator\Desktop\tes\Boghma.png" -define icon:auto-resize=256,128,64,48,32,16 "C:\Users\Administrator\Desktop\tes\Boghma.ico"
