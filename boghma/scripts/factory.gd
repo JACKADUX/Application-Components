@@ -8,7 +8,7 @@ var custom_create:Callable
 func register(type:int, create:Callable):
 	_factory[type] = create
 	
-func unregister(type):
+func unregister(type:int):
 	if type in _factory:
 		_factory.erase(type)
 

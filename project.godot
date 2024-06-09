@@ -24,3 +24,10 @@ window/size/viewport_height=800
 [dotnet]
 
 project/assembly_name="Application Components"
+
+[file_customization]
+
+folder_colors={
+"res://boghma/": "yellow",
+"res://example/factory/": "green"
+}
