@@ -80,6 +80,8 @@ func move_before(other:BaseHierarchy) -> Error:
 	if other == self:
 		return FAILED
 	var other_parent := other.get_parent()
+	if other_parent == self:
+		return FAILED
 	assert(other_parent, "other_parent 必须存在才能用这个方法")
 	if not _parent:
 		other_parent.add_child(self)
@@ -94,6 +96,8 @@ func move_after(other:BaseHierarchy) -> Error:
 	if other == self:
 		return FAILED
 	var other_parent := other.get_parent()
+	if other_parent == self:
+		return FAILED
 	assert(other_parent, "other_parent 必须存在才能用这个方法")
 	if not _parent:
 		other_parent.add_child(self)
@@ -147,47 +151,43 @@ func iterate():
 
 #endregion
 class Iterator:
-	var _current:BaseHierarchy
 	var ori:BaseHierarchy
+	var _current:BaseHierarchy
 	
 	func _init(current):
-		_current = current
 		ori = current
+		_current = current
 
 	func _iter_init(arg):
 		_current = ori
 		return _current
 	
-	func get_next(obj:BaseHierarchy):
-		var parent = obj.get_parent()
-		if not parent:
-			return 
-		var count = parent.get_child_count()
-		var index = obj.get_index()+1 
-		if index < count:
-			return parent.get_child(index)
-	
 	func _iter_next(arg):
-		if _current.get_child_count() >0:
+		if _current.get_child_count() != 0:
 			_current = _current.get_child(0)
 			return true
-		var next = get_next(_current)
+		if _current == ori:
+			return false
+		var parent = _current.get_parent()
+		if not parent:
+			return false
+		var next = _current.get_next()
 		if next:
 			_current = next
 			return true
 		while true:
-			var parent = _current.get_parent()
-			if not parent:
+			if parent == ori:
 				return false
-			next = get_next(parent)
-			if next:
-				_current = next
+			var pn = parent.get_next()
+			if pn:
+				_current = pn
 				return true
-			_current = parent
+			parent = parent.get_parent()
 		return false
 
 	func _iter_get(arg):
 		return _current
+
 		
 static func print_tree(element:BaseHierarchy, level:int=0):
 	print("\t".repeat(level), element)

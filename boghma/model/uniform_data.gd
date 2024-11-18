@@ -18,4 +18,3 @@ func get_type() -> int:
 func get_type_string() -> String:
 	return _type_string
 	
-

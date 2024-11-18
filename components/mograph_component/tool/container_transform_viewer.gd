@@ -33,4 +33,3 @@ func _draw():
 		trans = get_node_real_global_transform(child)
 		draw_trans(g_trans.affine_inverse()*trans,50)
 	
-

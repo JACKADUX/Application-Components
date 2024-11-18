@@ -15,4 +15,3 @@ func unregister(type:int):
 func create(type:int):
 	if _factory.get(type): 
 		return _factory[type].call()
-

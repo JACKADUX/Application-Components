@@ -235,38 +235,3 @@ func print_element_tree(element:Element, level:int=0):
 	print("\t".repeat(level), element.get_title(), element)
 	for child in element.get_children():
 		print_element_tree(child, level+1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
